@@ -1,0 +1,3 @@
+include ':KeyBoardView'
+include ':app'
+rootProject.name = "QmKeyBoardView"
