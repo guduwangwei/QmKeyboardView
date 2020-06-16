@@ -163,7 +163,7 @@ public class QmKeyboard {
                    R.styleable.QmKeyboard_keyWidth,
                     parent.mDisplayWidth, parent.mDefaultWidth);
             defaultHeight = getDimensionOrFraction(a, 
-                   R.styleable.QmKeyboard_qmKeyHeight,
+                   R.styleable.QmKeyboard_keyHeight,
                     parent.mDisplayHeight, parent.mDefaultHeight);
             defaultHorizontalGap = getDimensionOrFraction(a,
                    R.styleable.QmKeyboard_horizontalGap,
@@ -311,7 +311,7 @@ public class QmKeyboard {
                    R.styleable.QmKeyboard_keyWidth,
                     keyboard.mDisplayWidth, parent.defaultWidth);
             height = getDimensionOrFraction(a, 
-                   R.styleable.QmKeyboard_qmKeyHeight,
+                   R.styleable.QmKeyboard_keyHeight,
                     keyboard.mDisplayHeight, parent.defaultHeight);
             gap = getDimensionOrFraction(a, 
                    R.styleable.QmKeyboard_horizontalGap,
@@ -844,19 +844,17 @@ public class QmKeyboard {
     
     private void parseKeyboardAttributes(Resources res, XmlResourceParser parser) {
         AttributeSet attributeSet = Xml.asAttributeSet(parser);
-        Log.v("keyBoard", "attributeSize  == "+attributeSet.getAttributeCount());
-
-        Log.v("keyBoard", "0 value   == "+ attributeSet.getAttributeIntValue(R.styleable.QmKeyboard_Key_codes,22));
+        attributeSet.getAttributeCount();
 
         TypedArray a = res.obtainAttributes(attributeSet,
                R.styleable.QmKeyboard);
-        Log.v("keyBoard", "indexCount == "+a.getIndexCount());
+        a.getIndexCount();
 
         mDefaultWidth = getDimensionOrFraction(a,
                R.styleable.QmKeyboard_keyWidth,
                 mDisplayWidth, mDisplayWidth / 10);
         mDefaultHeight = getDimensionOrFraction(a,
-               R.styleable.QmKeyboard_qmKeyHeight,
+               R.styleable.QmKeyboard_keyHeight,
                 mDisplayHeight, 50);
         Log.v("keyBoard", "mDefaultHeight == "+mDefaultHeight);
 
