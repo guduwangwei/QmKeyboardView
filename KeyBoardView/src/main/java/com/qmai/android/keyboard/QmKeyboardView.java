@@ -274,7 +274,7 @@ public class QmKeyboardView extends View implements View.OnClickListener {
         for (int i = 0; i < n; i++) {
             int attr = a.getIndex(i);
 
-            if (attr == R.styleable.QmKeyboardView_keyBackground) {
+            if (attr == R.styleable.QmKeyboardView_key_Background) {
                 mKeyBackground = a.getDrawable(attr);
             } else if (attr == R.styleable.QmKeyboardView_verticalCorrection) {
                 mVerticalCorrection = a.getDimensionPixelOffset(attr, 0);

@@ -6,19 +6,20 @@
         <attr name="state_long_pressable" format="boolean" />
     </declare-styleable>
 
-
-    <declare-styleable name="QmKeyboard">
-        <!-- Default width of a key, in pixels or percentage of display width -->
-        <attr name="keyWidth" format="dimension|fraction" />
-        <!-- Default height of a key, in pixels or percentage of display width -->
-        <attr name="keyHeight" format="dimension|fraction" />
-        <!-- Default horizontal gap between keys -->
-        <attr name="horizontalGap" format="dimension|fraction" />
-        <!-- Default vertical gap between rows of keys -->
-        <attr name="verticalGap" format="dimension|fraction" />
+    <declare-styleable name="CKeyBoard">
+        <attr name="cKeyWidth" format="dimension|fraction"/>
+        <attr name="cKeyHeight" format="dimension|fraction" />
+        <attr name="CHorizontalGap" format="dimension|fraction" />
+        <attr name="CVerticalGap" format="dimension|fraction" />
     </declare-styleable>
+
+
     <declare-styleable name="MineView">
         <attr name="title" format="string" />
+    </declare-styleable>
+    <declare-styleable name="test">
+
+        <attr name="keyWidth" format="dimension"/>
     </declare-styleable>
 
     <attr name="mineViewStyle" format="reference" />
@@ -29,7 +30,7 @@
         <!-- Image for the key. This image needs to be a StateListDrawable, with the following
              possible states: normal, pressed, checkable, checkable+pressed, checkable+checked,
              checkable+checked+pressed. -->
-        <attr name="keyBackground" format="reference" />
+        <attr name="key_Background" format="reference" />
         <!-- Size of the text for character keys. -->
         <attr name="keyTextSize" format="dimension" />
         <!-- Size of the text for custom keys with some text and no icon. -->

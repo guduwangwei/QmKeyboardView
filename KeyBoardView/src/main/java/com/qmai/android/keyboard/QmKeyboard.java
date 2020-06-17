@@ -30,7 +30,7 @@ public class QmKeyboard {
     static final String TAG = "Keyboard";
     
     // Keyboard XML Tags
-    private static final String TAG_KEYBOARD = "QmKeyboard";
+    private static final String TAG_KEYBOARD = "KeyBoard";
     private static final String TAG_ROW = "Row";
     private static final String TAG_KEY = "Key";
 
@@ -158,18 +158,18 @@ public class QmKeyboard {
         public Row(Resources res, QmKeyboard parent, XmlResourceParser parser) {
             this.parent = parent;
             TypedArray a = res.obtainAttributes(Xml.asAttributeSet(parser), 
-                   R.styleable.QmKeyboard);
+                   R.styleable.CKeyBoard);
             defaultWidth = getDimensionOrFraction(a, 
-                   R.styleable.QmKeyboard_keyWidth,
+                   R.styleable.CKeyBoard_cKeyWidth,
                     parent.mDisplayWidth, parent.mDefaultWidth);
             defaultHeight = getDimensionOrFraction(a, 
-                   R.styleable.QmKeyboard_keyHeight,
+                   R.styleable.CKeyBoard_cKeyHeight,
                     parent.mDisplayHeight, parent.mDefaultHeight);
             defaultHorizontalGap = getDimensionOrFraction(a,
-                   R.styleable.QmKeyboard_horizontalGap,
+                   R.styleable.CKeyBoard_CHorizontalGap,
                     parent.mDisplayWidth, parent.mDefaultHorizontalGap);
             verticalGap = getDimensionOrFraction(a, 
-                   R.styleable.QmKeyboard_verticalGap,
+                   R.styleable.CKeyBoard_CVerticalGap,
                     parent.mDisplayHeight, parent.mDefaultVerticalGap);
             a.recycle();
             a = res.obtainAttributes(Xml.asAttributeSet(parser),
@@ -305,21 +305,22 @@ public class QmKeyboard {
             this.y = y;
             
             TypedArray a = res.obtainAttributes(Xml.asAttributeSet(parser), 
-                   R.styleable.QmKeyboard);
+                   R.styleable.CKeyBoard);
 
             width = getDimensionOrFraction(a, 
-                   R.styleable.QmKeyboard_keyWidth,
+                   R.styleable.CKeyBoard_cKeyWidth,
                     keyboard.mDisplayWidth, parent.defaultWidth);
             height = getDimensionOrFraction(a, 
-                   R.styleable.QmKeyboard_keyHeight,
+                   R.styleable.CKeyBoard_cKeyHeight,
                     keyboard.mDisplayHeight, parent.defaultHeight);
             gap = getDimensionOrFraction(a, 
-                   R.styleable.QmKeyboard_horizontalGap,
+                   R.styleable.CKeyBoard_CHorizontalGap,
                     keyboard.mDisplayWidth, parent.defaultHorizontalGap);
             a.recycle();
             a = res.obtainAttributes(Xml.asAttributeSet(parser),
                    R.styleable.QmKeyboard_Key);
             this.x += gap;
+            Log.v("", "key len"+a.getIndexCount());
             TypedValue codesValue = new TypedValue();
             a.getValue(R.styleable.QmKeyboard_Key_codes,
                     codesValue);
@@ -844,25 +845,24 @@ public class QmKeyboard {
     
     private void parseKeyboardAttributes(Resources res, XmlResourceParser parser) {
         AttributeSet attributeSet = Xml.asAttributeSet(parser);
-        attributeSet.getAttributeCount();
 
         TypedArray a = res.obtainAttributes(attributeSet,
-               R.styleable.QmKeyboard);
-        a.getIndexCount();
+               R.styleable.CKeyBoard);
+        Log.v("keyBoard", "index Count  == "+a.getIndexCount());
+
 
         mDefaultWidth = getDimensionOrFraction(a,
-               R.styleable.QmKeyboard_keyWidth,
+               R.styleable.CKeyBoard_cKeyWidth,
                 mDisplayWidth, mDisplayWidth / 10);
         mDefaultHeight = getDimensionOrFraction(a,
-               R.styleable.QmKeyboard_keyHeight,
+               R.styleable.CKeyBoard_cKeyHeight,
                 mDisplayHeight, 50);
-        Log.v("keyBoard", "mDefaultHeight == "+mDefaultHeight);
 
         mDefaultHorizontalGap = getDimensionOrFraction(a,
-               R.styleable.QmKeyboard_horizontalGap,
+               R.styleable.CKeyBoard_CHorizontalGap,
                 mDisplayWidth, 0);
         mDefaultVerticalGap = getDimensionOrFraction(a,
-               R.styleable.QmKeyboard_verticalGap,
+               R.styleable.CKeyBoard_CVerticalGap,
                 mDisplayHeight, 0);
         mProximityThreshold = (int) (mDefaultWidth * SEARCH_DISTANCE);
         mProximityThreshold = mProximityThreshold * mProximityThreshold; // Square it for comparison

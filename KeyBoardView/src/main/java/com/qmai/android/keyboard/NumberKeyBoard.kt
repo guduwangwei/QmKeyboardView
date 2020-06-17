@@ -40,7 +40,7 @@ class NumberKeyBoard : QmKeyboardView {
     }
 
     private fun init(context: Context?) {
-        val keyBoard = QmKeyboard(context, R.xml.numberkeyboard_content)
+        val keyBoard = QmKeyboard(context, R.xml.numkeyboard)
         isEnabled = true
         isPreviewEnabled = false
 
